@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Portafolio profesional de Keytlin García Rurush. Diseño pedagógico, innovación y tecnología educativa.">
+<title>Keytlin García | Portafolio</title>
+
+<style>
+:root {
+  --fondo: #fcfbfe;
+  --lavanda: #e5ddf5;
+  --rosa: #f5e4e8;
+  --azul: #dce8f5;
+  --menta: #e4eee8;
+  --arena: #f4eadd;
+  --texto: #373343;
+  --acento: #79668f;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--fondo);
+  color: var(--texto);
+  font-family: Arial, sans-serif;
+  line-height: 1.7;
+}
+
+h1, h2, h3 {
+  font-family: Georgia, serif;
+  font-weight: normal;
+  line-height: 1.15;
+}
+
+h1 {
+  font-size: clamp(44px, 6vw, 84px);
+  letter-spacing: -3px;
+  margin: 24px 0;
+}
+
+h2 {
+  font-size: clamp(32px, 4vw, 48px);
+  letter-spacing: -1px;
+}
+
+a { color: var(--acento); text-decoration: none; }
+
+button, input, select { font: inherit; }
+
+button { cursor: pointer; }
+
+.container {
+  width: min(1120px, 90%);
+  margin: auto;
+}
+
+section { padding: 72px 0; }
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 11px;
+  color: var(--acento);
+  font-weight: bold;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--fondo);
+  border-bottom: 1px solid #e9e4ef;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 0;
+}
+
+.logo {
+  font: bold 34px Georgia;
+  color: var(--acento);
+}
+
+nav {
+  display: flex;
+  gap: 22px;
+  font-size: 13px;
+}
+
+.hero {
+  background: linear-gradient(120deg, #fcfbfe, #f1ecf8);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 55px;
+  align-items: center;
+}
+
+.degree {
+  color: var(--acento);
+  font-size: 23px;
+  font-weight: bold;
+}
+
+.portrait {
+  min-height: 380px;
+  border-radius: 180px 180px 20px 20px;
+  background: linear-gradient(145deg, var(--lavanda), var(--rosa));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.portrait img[hidden] { display: none; }
+
+.portrait img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+}
+
+.monogram {
+  font: 90px Georgia;
+  color: var(--acento);
+}
+
+.btn {
+  display: inline-block;
+  border: 0;
+  border-radius: 9px;
+  padding: 13px 22px;
+  background: var(--lavanda);
+  color: #514366;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.btn:hover { background: #d8cce9; }
+
+.institutions {
+  padding: 28px 0;
+  text-align: center;
+  border-bottom: 1px solid #e9e4ef;
+}
+
+.brands {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-top: 20px;
+  color: #756b83;
+  font-weight: bold;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 20px 0;
+}
+
+.tag {
+  border: 1px solid #ded7e9;
+  border-radius: 30px;
+  padding: 7px 13px;
+  font-size: 12px;
+  background: white;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  border: 1px solid #e7e1ed;
+  border-radius: 14px;
+  overflow: hidden;
+  transition: transform .2s;
+}
+
+.card:hover { transform: translateY(-4px); }
+
+.card-content { padding: 22px; }
+
+.card h3 { font-size: 24px; margin: 10px 0; }
+
+.card p { font-size: 14px; }
+
+.cover {
+  height: 155px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 54px;
+  color: var(--acento);
+}
+
+.cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 25px 0;
+}
+
+input, select {
+  background: white;
+  border: 1px solid #ded7e9;
+  border-radius: 8px;
+  padding: 12px;
+  color: var(--texto);
+  min-width: 0;
+  flex: 1 1 180px;
+}
+
+#portafolio { background: #f7f5fb; }
+
+.project-feature {
+  background: linear-gradient(130deg, var(--lavanda), var(--rosa));
+  padding: 38px;
+  border-radius: 18px;
+  margin-bottom: 24px;
+}
+
+.project-feature h3 {
+  font-size: 48px;
+  color: var(--acento);
+  margin: 15px 0;
+}
+
+.project-card {
+  padding: 25px;
+  border-radius: 14px;
+}
+
+.project-card h3 { font-size: 27px; }
+
+#metodologia { background: #f0edf7; }
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.step-number {
+  font: 42px Georgia;
+  color: #a18dbd;
+}
+
+dialog {
+  border: 1px solid #e1d9eb;
+  border-radius: 16px;
+  width: min(750px, 92%);
+  max-height: 85vh;
+  padding: 30px;
+  color: var(--texto);
+}
+
+dialog::backdrop { background: #37334366; }
+
+dialog iframe {
+  width: 100%;
+  height: 450px;
+  border: 1px solid #e1d9eb;
+  margin: 20px 0;
+}
+
+.close {
+  float: right;
+  border: 0;
+  background: var(--lavanda);
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+}
+
+footer {
+  background: var(--lavanda);
+  padding: 24px;
+  text-align: center;
+  font-size: 13px;
+}
+
+@media (max-width: 760px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .grid, .steps { grid-template-columns: repeat(2, 1fr); }
+  nav { gap: 10px; font-size: 11px; }
+  section { padding: 45px 0; }
+  .portrait { min-height: 250px; }
+}
+
+@media (max-width: 440px) {
+  .grid, .steps { grid-template-columns: 1fr; }
+  .nav { flex-wrap: wrap; gap: 10px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <a class="logo" href="#inicio">kg.</a>
+    <nav>
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#portafolio">Portafolio</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="inicio">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow">Pedagogía · Creatividad · Innovación</div>
+      <h1>Hola, soy<br>Keytlin García.</h1>
+      <div class="degree">Magíster en Tecnología Educativa</div>
+      <p>Tecnológico de Monterrey, México</p>
+      <p>Diseño materiales, experiencias y soluciones educativas que conectan la pedagogía, la creatividad y la tecnología.</p>
+      <a class="btn" href="#portafolio">Explorar mi portafolio ↓</a>
+    </div>
+
+    <div class="portrait">
+      <!-- Para mostrar tu fotografía, guarda foto.jpg en assets/ -->
+      <img src="assets/foto.jpg" alt="Fotografía profesional de Keytlin García" hidden onload="this.hidden=false; this.nextElementSibling.hidden=true" onerror="this.remove()">
+      <div class="monogram">KG</div>
+    </div>
+  </div>
+</section>
+
+<div class="institutions">
+  <div class="container">
+    <div class="eyebrow">Experiencia profesional y proyectos</div>
+    <div class="brands">
+      <span>AMELIA</span>
+      <span>Enseña Perú</span>
+      <span>UTP</span>
+      <span>UPN</span>
+      <span>TIZA</span>
+      <span>CONCYTEC</span>
+      <span>Continental</span>
+      <span>EntreLazos</span>
+    </div>
+  </div>
+</div>
+
+<section id="sobre-mi">
+  <div class="container">
+    <div class="eyebrow">01 / Sobre mí</div>
+    <h2>Educación con propósito.<br>
+      <i style="color:var(--acento)">Innovación con sentido.</i>
+    </h2>
+
+    <p>Soy especialista en diseño pedagógico, formación docente, innovación educativa e inteligencia artificial. Mi trayectoria conecta la experiencia en aulas rurales con el desarrollo de recursos y soluciones digitales para docentes, estudiantes y familias.</p>
+
+    <p>Soy cofundadora y directora pedagógica de EntreLazos, Centro de Desarrollo Infantil, donde lidero el diseño de la propuesta pedagógica y los contenidos educativos.</p>
+
+    <div class="tags">
+      <span class="tag">Diseño pedagógico</span>
+      <span class="tag">EdTech</span>
+      <span class="tag">Primera infancia</span>
+      <span class="tag">Inteligencia artificial</span>
+      <span class="tag">Diseño instruccional</span>
+      <span class="tag">Innovación social</span>
+      <span class="tag">DUA</span>
+      <span class="tag">STEAM</span>
+    </div>
+  </div>
+</section>
+
+<section id="portafolio">
+  <div class="container">
+    <div class="eyebrow">02 / Colecciones de trabajo</div>
+    <h2>Mi portafolio.</h2>
+    <p>Materiales, recursos y experiencias educativas.</p>
+    <div class="grid" id="categorias"></div>
+  </div>
+</section>
+
+<section id="galeria">
+  <div class="container">
+    <div class="eyebrow">03 / Galería de materiales</div>
+    <h2>Trabajos seleccionados.</h2>
+
+    <div class="filters">
+      <input id="buscar" placeholder="Buscar materiales..." aria-label="Buscar materiales">
+      <select id="filtroCategoria" aria-label="Categoría">
+        <option value="">Todas las categorías</option>
+      </select>
+      <select id="filtroInstitucion" aria-label="Institución">
+        <option value="">Todas las instituciones</option>
+      </select>
+    </div>
+
+    <div class="grid" id="materiales"></div>
+  </div>
+</section>
+
+<section id="proyectos">
+  <div class="container">
+    <div class="eyebrow">04 / Proyectos destacados</div>
+    <h2>De las ideas a la acción.</h2>
+
+    <div class="project-feature">
+      <div class="eyebrow">Emprendimiento educativo · En desarrollo</div>
+      <h3>EntreLazos.</h3>
+      <p>Centro de Desarrollo Infantil</p>
+      <strong>Cofundadora y directora pedagógica</strong>
+      <p>Diseño de la propuesta pedagógica, planificación curricular, experiencias lúdicas, materiales educativos para primera infancia y acompañamiento familiar.</p>
+
+      <div class="tags">
+        <span class="tag">Primera infancia</span>
+        <span class="tag">Desarrollo infantil</span>
+        <span class="tag">Diseño curricular</span>
+        <span class="tag">Aprendizaje familiar</span>
+      </div>
+
+      <a class="btn"
+         href="https://www.instagram.com/entrelazos.infantil/"
+         target="_blank" rel="noopener noreferrer">
+         Conocer EntreLazos ↗
+      </a>
+    </div>
+
+    <div class="grid" id="listaProyectos"></div>
+  </div>
+</section>
+
+<section id="metodologia">
+  <div class="container">
+    <div class="eyebrow">05 / Metodología</div>
+    <h2>Así diseño el aprendizaje.</h2>
+
+    <div class="steps">
+      <div>
+        <div class="step-number">01</div>
+        <h3>Comprender</h3>
+        <p>Identifico necesidades y contextos educativos.</p>
+      </div>
+      <div>
+        <div class="step-number">02</div>
+        <h3>Diseñar</h3>
+        <p>Defino objetivos y experiencias de aprendizaje.</p>
+      </div>
+      <div>
+        <div class="step-number">03</div>
+        <h3>Crear</h3>
+        <p>Desarrollo materiales, prototipos y soluciones.</p>
+      </div>
+      <div>
+        <div class="step-number">04</div>
+        <h3>Validar</h3>
+        <p>Evalúo, recojo retroalimentación y mejoro.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contacto">
+  <div class="container">
+    <div class="eyebrow">06 / Conectemos</div>
+    <h2>Creemos nuevas formas de aprender.</h2>
+    <p>Diseño pedagógico · Innovación · Tecnología educativa</p>
+    <div class="tags" id="contactLinks"></div>
+    <!-- Configura los enlaces en el objeto perfil al inicio del script. -->
+  </div>
+</section>
+
+<footer>
+  © 2026 Keytlin García Rurush · Portafolio profesional
+</footer>
+
+<dialog id="detalle">
+  <button class="close" aria-label="Cerrar"
+    onclick="document.getElementById('detalle').close()">×</button>
+  <div id="detalleContenido"></div>
+</dialog>
+
+<script>
+const perfil = {
+  correo: "",
+  linkedin: "",
+  cv: ""
+};
+
+
+// =======================================
+// CATEGORÍAS DEL PORTAFOLIO
+// =======================================
+
+const categorias = [
+  {
+    id: "capacitacion",
+    titulo: "Capacitación y formación docente",
+    descripcion: "Presentaciones, talleres, cursos y guías.",
+    color: "#e5ddf5", icono: "▤"
+  },
+  {
+    id: "inicial",
+    titulo: "Material educativo · Inicial",
+    descripcion: "Juego, lenguaje y desarrollo infantil.",
+    color: "#f5e4e8", icono: "◇"
+  },
+  {
+    id: "primaria",
+    titulo: "Material educativo · Primaria",
+    descripcion: "Fichas, sesiones y proyectos educativos.",
+    color: "#dce8f5", icono: "▧"
+  },
+  {
+    id: "familias",
+    titulo: "Educación y aprendizaje en familia",
+    descripcion: "Guías y experiencias para el hogar.",
+    color: "#e4eee8", icono: "♡"
+  },
+  {
+    id: "recursos",
+    titulo: "Recursos educativos y multimedia",
+    descripcion: "Infografías, videos y recursos digitales.",
+    color: "#f4eadd", icono: "✳"
+  },
+  {
+    id: "curricular",
+    titulo: "Diseño curricular e instruccional",
+    descripcion: "Programas, sílabos y planificación.",
+    color: "#e5ddf5", icono: "▱"
+  },
+  {
+    id: "flujos",
+    titulo: "Flujos y experiencias de aprendizaje",
+    descripcion: "Rutas y asistentes conversacionales.",
+    color: "#dce8f5", icono: "⑂"
+  },
+  {
+    id: "plataformas",
+    titulo: "Plataformas educativas y EdTech",
+    descripcion: "Prototipos y soluciones tecnológicas.",
+    color: "#e4eee8", icono: "▣"
+  },
+  {
+    id: "investigacion",
+    titulo: "Investigación, evaluación e impacto",
+    descripcion: "Instrumentos, informes y análisis.",
+    color: "#f0e6f4", icono: "▥"
+  }
+];
+
+// =======================================
+// BASE DE MATERIALES
+// Agregar aquí los nuevos recursos
+// =======================================
+
+const materiales = [
+  {
+    id: "upn-tesis",
+    titulo: "Seguimiento Pedagógico de Tesis",
+    institucion: "UPN",
+    categorias: ["plataformas", "capacitacion", "recursos"],
+    nivel: "Educación superior",
+    publico: "Docentes asesores de tesis",
+    formato: "Plataforma web",
+    estado: "Enlace disponible",
+    descripcion: "Plataforma de acompañamiento pedagógico que integra orientaciones, estrategias y recursos digitales para docentes asesores de tesis.",
+    aporte: "Diseño pedagógico y elaboración de recursos educativos.",
+    portada: "",
+    archivo: "",
+    enlace: "https://upntesis.vercel.app/"
+  },
+  {
+    id: "tiza-coleccion",
+    titulo: "Colección de materiales educativos",
+    institucion: "TIZA",
+    categorias: ["recursos"],
+    nivel: "Pendiente de clasificación",
+    publico: "Pendiente de clasificación",
+    formato: "Material educativo",
+    estado: "Archivos pendientes de incorporar",
+    descripcion: "Colección de materiales educativos elaborados para TIZA.",
+    aporte: "Elaboración de materiales educativos.",
+    portada: "",
+    archivo: "",
+    enlace: ""
+  },
+  {
+    id: "entrelazos-curriculo",
+    titulo: "Propuesta pedagógica infantil",
+    institucion: "EntreLazos",
+    categorias: ["inicial", "curricular"],
+    nivel: "Primera infancia",
+    publico: "Educadoras y niños",
+    formato: "Propuesta pedagógica",
+    estado: "En desarrollo",
+    descripcion: "Diseño de la propuesta curricular y experiencias de aprendizaje orientadas al desarrollo integral infantil.",
+    aporte: "Dirección pedagógica y diseño curricular.",
+    portada: "",
+    archivo: "",
+    enlace: ""
+  },
+  {
+    id: "entrelazos-familias",
+    titulo: "Recursos para el aprendizaje en familia",
+    institucion: "EntreLazos",
+    categorias: ["familias"],
+    nivel: "Primera infancia",
+    publico: "Familias",
+    formato: "Guías educativas",
+    estado: "Planificado",
+    descripcion: "Propuesta de recursos para fortalecer el acompañamiento educativo en el hogar.",
+    aporte: "Diseño pedagógico.",
+    portada: "",
+    archivo: "",
+    enlace: ""
+  }
+];
+
+// =======================================
+// PROYECTOS PROFESIONALES
+// =======================================
+
+const proyectos = [
+  ["AMELIA 3.0", "Diseño pedagógico e inteligencia artificial", "#e5ddf5"],
+  ["TIZA", "Producción de materiales educativos", "#f5e4e8"],
+  ["Enseña Perú", "Sistema de IA para las familias", "#e4eee8"],
+  ["Ruta Docente", "Diseño y prototipado educativo", "#dce8f5"],
+  ["UPN", "Formación docente y recursos digitales", "#e5ddf5"],
+  ["UTP", "Capacitación y acompañamiento docente", "#f4eadd"],
+  ["HANAQ", "Innovación educativa rural", "#f5e4e8"],
+  ["Universidad Continental", "Diseño curricular", "#dce8f5"],
+  ["CONCYTEC", "Educación STEAM", "#e4eee8"]
+];
+
+const $ = id => document.getElementById(id);
+
+function escapeHTML(value) {
+  return String(value ?? "").replace(/[&<>"']/g, char => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#39;"
+  }[char]));
+}
+
+function safeURL(value) {
+  if (!value) return "";
+  try {
+    const url = new URL(value, window.location.href);
+    return ["http:", "https:"].includes(url.protocol)
+      ? url.href : "";
+  } catch {
+    return "";
+  }
+}
+
+function renderCategorias() {
+  $("categorias").innerHTML = categorias.map((c, i) => `
+    <article class="card">
+      <div class="cover" style="background:${c.color}">
+        ${c.icono}
+      </div>
+      <div class="card-content">
+        <div class="eyebrow">
+          Colección ${String(i + 1).padStart(2, "0")}
+        </div>
+        <h3>${escapeHTML(c.titulo)}</h3>
+        <p>${escapeHTML(c.descripcion)}</p>
+        <button class="btn" data-categoria="${c.id}">
+          Explorar colección ↗
+        </button>
+      </div>
+    </article>
+  `).join("");
+
+  document.querySelectorAll("[data-categoria]").forEach(btn => {
+    btn.addEventListener("click", () => {
+      $("filtroCategoria").value = btn.dataset.categoria;
+      $("filtroInstitucion").value = "";
+      $("buscar").value = "";
+      renderMateriales();
+      $("galeria").scrollIntoView();
+    });
+  });
+}
+
+function renderFiltros() {
+  $("filtroCategoria").innerHTML += categorias.map(c =>
+    `<option value="${c.id}">${escapeHTML(c.titulo)}</option>`
+  ).join("");
+
+  const instituciones = [...new Set(
+    materiales.map(m => m.institucion)
+  )];
+
+  $("filtroInstitucion").innerHTML += instituciones.map(i =>
+    `<option value="${escapeHTML(i)}">${escapeHTML(i)}</option>`
+  ).join("");
+}
+
+function renderMateriales() {
+  const busqueda = $("buscar").value.toLowerCase();
+  const categoria = $("filtroCategoria").value;
+  const institucion = $("filtroInstitucion").value;
+
+  const resultados = materiales.filter(m =>
+    (!categoria || m.categorias.includes(categoria)) &&
+    (!institucion || m.institucion === institucion) &&
+    `${m.titulo} ${m.institucion} ${m.descripcion}`
+      .toLowerCase().includes(busqueda)
+  );
+
+  $("materiales").innerHTML = resultados.map(m => {
+    const c = categorias.find(c => c.id === m.categorias[0]);
+    const portada = safeURL(m.portada);
+
+    return `
+      <article class="card">
+        <div class="cover" style="background:${c.color}">
+          ${portada
+            ? `<img src="${escapeHTML(portada)}" alt="Portada del material">`
+            : c.icono}
+        </div>
+        <div class="card-content">
+          <div class="eyebrow">${escapeHTML(m.institucion)}</div>
+          <h3>${escapeHTML(m.titulo)}</h3>
+          <p>${escapeHTML(m.formato)}</p>
+          <p style="color:var(--acento);font-size:12px">
+            ${escapeHTML(m.estado)}
+          </p>
+          <button class="btn" data-material="${escapeHTML(m.id)}">
+            Ver material ↗
+          </button>
+        </div>
+      </article>
+    `;
+  }).join("") || "<p>Esta colección está preparada para recibir nuevos materiales.</p>";
+
+  document.querySelectorAll("[data-material]").forEach(btn => {
+    btn.addEventListener("click", () => {
+      abrirMaterial(btn.dataset.material);
+    });
+  });
+}
+
+function abrirMaterial(id) {
+  const m = materiales.find(item => item.id === id);
+  if (!m) return;
+
+  const archivo = safeURL(m.archivo);
+  const enlace = safeURL(m.enlace);
+
+  $("detalleContenido").innerHTML = `
+    <div class="eyebrow">${escapeHTML(m.institucion)}</div>
+    <h2>${escapeHTML(m.titulo)}</h2>
+    <p>${escapeHTML(m.descripcion)}</p>
+
+    <p><strong>Nivel:</strong> ${escapeHTML(m.nivel)}</p>
+    <p><strong>Público:</strong> ${escapeHTML(m.publico)}</p>
+    <p><strong>Formato:</strong> ${escapeHTML(m.formato)}</p>
+    <p><strong>Mi contribución:</strong> ${escapeHTML(m.aporte)}</p>
+    <p><strong>Estado:</strong> ${escapeHTML(m.estado)}</p>
+
+    ${archivo && new URL(archivo).pathname.toLowerCase().endsWith(".pdf")
+      ? `<iframe src="${escapeHTML(archivo)}" title="Vista del PDF"></iframe>`
+      : ""}
+
+    ${archivo
+      ? `<a class="btn" href="${escapeHTML(archivo)}"
+          target="_blank" rel="noopener noreferrer">Abrir documento</a>`
+      : ""}
+
+    ${enlace
+      ? `<a class="btn" href="${escapeHTML(enlace)}"
+          target="_blank" rel="noopener noreferrer">Visitar plataforma ↗</a>`
+      : ""}
+
+    ${!archivo && !enlace
+      ? "<p>Documento original pendiente de incorporar.</p>"
+      : ""}
+  `;
+
+  $("detalle").showModal();
+}
+
+function renderProyectos() {
+  $("listaProyectos").innerHTML = proyectos.map(p => `
+    <article class="project-card" style="background:${p[2]}">
+      <div class="eyebrow">Proyecto profesional</div>
+      <h3>${escapeHTML(p[0])}</h3>
+      <p>${escapeHTML(p[1])}</p>
+    </article>
+  `).join("");
+}
+
+$("buscar").addEventListener("input", renderMateriales);
+$("filtroCategoria").addEventListener("change", renderMateriales);
+$("filtroInstitucion").addEventListener("change", renderMateriales);
+
+$("contactLinks").innerHTML = [
+  [perfil.correo ? "mailto:" + perfil.correo : "", "Escríbeme"],
+  [safeURL(perfil.linkedin), "LinkedIn ↗"],
+  [safeURL(perfil.cv), "Descargar CV"]
+].filter(([url]) => url).map(([url, label]) => `<a class="btn" href="${escapeHTML(url)}" target="_blank" rel="noopener noreferrer">${label}</a>`).join("");
+
+renderCategorias();
+renderFiltros();
+renderMateriales();
+renderProyectos();
+
+</script>
+</body>
+</html>
