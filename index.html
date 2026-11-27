@@ -325,7 +325,6 @@ footer {
     <nav>
       <a href="#sobre-mi">Sobre mí</a>
       <a href="#portafolio">Portafolio</a>
-      <a href="#proyectos">Proyectos</a>
       <a href="#contacto">Contacto</a>
     </nav>
   </div>
@@ -352,7 +351,7 @@ footer {
 
 <div class="institutions">
   <div class="container">
-    <div class="eyebrow">Experiencia profesional y proyectos</div>
+    <div class="eyebrow">Experiencia profesional</div>
     <div class="brands">
       <span>AMELIA</span>
       <span>Enseña Perú</span>
@@ -418,39 +417,9 @@ footer {
   </div>
 </section>
 
-<section id="proyectos">
-  <div class="container">
-    <div class="eyebrow">04 / Proyectos destacados</div>
-    <h2>De las ideas a la acción.</h2>
-
-    <div class="project-feature">
-      <div class="eyebrow">Emprendimiento educativo · En desarrollo</div>
-      <h3>EntreLazos.</h3>
-      <p>Centro de Desarrollo Infantil</p>
-      <strong>Cofundadora y directora pedagógica</strong>
-      <p>Diseño de la propuesta pedagógica, planificación curricular, experiencias lúdicas, materiales educativos para primera infancia y acompañamiento familiar.</p>
-
-      <div class="tags">
-        <span class="tag">Primera infancia</span>
-        <span class="tag">Desarrollo infantil</span>
-        <span class="tag">Diseño curricular</span>
-        <span class="tag">Aprendizaje familiar</span>
-      </div>
-
-      <a class="btn"
-         href="https://www.instagram.com/entrelazos.infantil/"
-         target="_blank" rel="noopener noreferrer">
-         Conocer EntreLazos ↗
-      </a>
-    </div>
-
-    <div class="grid" id="listaProyectos"></div>
-  </div>
-</section>
-
 <section id="metodologia">
   <div class="container">
-    <div class="eyebrow">05 / Metodología</div>
+    <div class="eyebrow">04 / Metodología</div>
     <h2>Así diseño el aprendizaje.</h2>
 
     <div class="steps">
@@ -480,7 +449,7 @@ footer {
 
 <section id="contacto">
   <div class="container">
-    <div class="eyebrow">06 / Conectemos</div>
+    <div class="eyebrow">05 / Conectemos</div>
     <h2>Creemos nuevas formas de aprender.</h2>
     <p>Diseño pedagógico · Innovación · Tecnología educativa</p>
     <div class="tags" id="contactLinks"></div>
@@ -635,22 +604,6 @@ const materiales = [
   }
 ];
 
-// =======================================
-// PROYECTOS PROFESIONALES
-// =======================================
-
-const proyectos = [
-  ["AMELIA 3.0", "Diseño pedagógico e inteligencia artificial", "#e5ddf5"],
-  ["TIZA", "Producción de materiales educativos", "#f5e4e8"],
-  ["Enseña Perú", "Sistema de IA para las familias", "#e4eee8"],
-  ["Ruta Docente", "Diseño y prototipado educativo", "#dce8f5"],
-  ["UPN", "Formación docente y recursos digitales", "#e5ddf5"],
-  ["UTP", "Capacitación y acompañamiento docente", "#f4eadd"],
-  ["HANAQ", "Innovación educativa rural", "#f5e4e8"],
-  ["Universidad Continental", "Diseño curricular", "#dce8f5"],
-  ["CONCYTEC", "Educación STEAM", "#e4eee8"]
-];
-
 const $ = id => document.getElementById(id);
 
 function escapeHTML(value) {
@@ -803,16 +756,6 @@ function abrirMaterial(id) {
   $("detalle").showModal();
 }
 
-function renderProyectos() {
-  $("listaProyectos").innerHTML = proyectos.map(p => `
-    <article class="project-card" style="background:${p[2]}">
-      <div class="eyebrow">Proyecto profesional</div>
-      <h3>${escapeHTML(p[0])}</h3>
-      <p>${escapeHTML(p[1])}</p>
-    </article>
-  `).join("");
-}
-
 $("buscar").addEventListener("input", renderMateriales);
 $("filtroCategoria").addEventListener("change", renderMateriales);
 $("filtroInstitucion").addEventListener("change", renderMateriales);
@@ -826,7 +769,6 @@ $("contactLinks").innerHTML = [
 renderCategorias();
 renderFiltros();
 renderMateriales();
-renderProyectos();
 
 </script>
 </body>
