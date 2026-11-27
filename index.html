@@ -127,7 +127,8 @@ nav {
 .portrait img {
   width: 100%;
   height: 420px;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: bottom;
 }
 
 .monogram {
@@ -343,7 +344,7 @@ footer {
 
     <div class="portrait">
       <!-- Para mostrar tu fotografía, guarda foto.jpg en assets/ -->
-      <img src="assets/foto.jpg" alt="Fotografía profesional de Keytlin García" hidden onload="this.hidden=false; this.nextElementSibling.hidden=true" onerror="this.remove()">
+      <img src="assets/foto.png" alt="Fotografía profesional de Keytlin García" hidden onload="this.hidden=false; this.nextElementSibling.hidden=true" onerror="this.remove()">
       <div class="monogram">KG</div>
     </div>
   </div>
