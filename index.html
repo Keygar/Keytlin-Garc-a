@@ -549,7 +549,8 @@ const materiales = [
     aporte: "Diseño pedagógico y desarrollo de la guía.",
     portada: "",
     archivo: "",
-    enlace: "https://upntesis.vercel.app/"
+    enlace: "https://upntesis.vercel.app/",
+    directo: true
   },
   {
     id: "drive-1",
@@ -935,9 +936,9 @@ function renderMateriales() {
           <p style="color:var(--acento);font-size:12px">
             ${escapeHTML(m.estado)}
           </p>
-          <button class="btn" data-material="${escapeHTML(m.id)}">
-            Ver material ↗
-          </button>
+          ${m.directo && safeURL(m.enlace)
+            ? `<a class="btn" href="${escapeHTML(safeURL(m.enlace))}" target="_blank" rel="noopener noreferrer">Ver plataforma ↗</a>`
+            : `<button class="btn" data-material="${escapeHTML(m.id)}">Ver material ↗</button>`}
         </div>
       </article>
     `;
